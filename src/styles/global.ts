@@ -42,7 +42,7 @@ export const globalStyles = globalCss({
     padding: '0.875rem 1.5rem',
     borderRadius: '8px',
     border: 0,
-    fontWeight: 'bold',
+    fontWeight: '500',
     cursor: 'pointer',
     transtion: '0.3s',
   },
