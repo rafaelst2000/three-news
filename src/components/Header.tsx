@@ -9,9 +9,6 @@ export function Header() {
         </h2>
         <ul>
           <li>
-            <a href="index.html">Home</a>
-          </li>
-          <li>
             <a href="#">Novidades</a>
           </li>
           <li>
@@ -20,9 +17,7 @@ export function Header() {
           <li>
             <a href="#">Contato</a>
           </li>
-          <a href="news.html" className="button">
-            Entrar
-          </a>
+          <button className="button">Entrar</button>
         </ul>
       </HeaderContent>
     </HeaderContainer>
