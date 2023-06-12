@@ -1,12 +1,13 @@
 import { HomeContainer } from '@/styles/pages/home'
+import { signIn } from 'next-auth/react'
+import { GetServerSideProps } from 'next'
+import { authOptions } from '@/pages/api/auth/[...nextauth]'
+
 import homeImage from '@/assets/homeImage.svg'
 import Image from 'next/image'
-import { signIn, useSession } from 'next-auth/react'
+import { getServerSession } from 'next-auth'
 
 export default function Home() {
-  const session = useSession()
-  console.log(session)
-
   return (
     <>
       <HomeContainer className="container">
@@ -38,4 +39,24 @@ export default function Home() {
       </HomeContainer>
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const session = await getServerSession(context.req, context.res, authOptions)
+
+  if (session) {
+    return {
+      props: {
+        session,
+      },
+      redirect: {
+        destination: '/blog',
+        permanent: false,
+      },
+    }
+  }
+
+  return {
+    props: {},
+  }
 }

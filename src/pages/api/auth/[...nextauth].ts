@@ -16,7 +16,10 @@ export const authOptions: NextAuthOptions = {
   ],
   callbacks: {
     async signIn({ account }) {
-      return true
+      if (account?.id_token) {
+        return true
+      }
+      return false
     },
   },
 }

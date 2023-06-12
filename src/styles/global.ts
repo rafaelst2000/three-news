@@ -39,12 +39,28 @@ export const globalStyles = globalCss({
   },
 
   '.button': {
-    padding: '0.875rem 1.5rem',
+    padding: '0.75rem 1.5rem',
     borderRadius: '8px',
-    border: 0,
+    border: '2px solid transparent',
     fontWeight: '500',
     cursor: 'pointer',
-    transtion: '0.3s',
+    transition: '0.3s',
+  },
+
+  '.outlined-button': {
+    padding: '0.75rem 1.5rem',
+    borderRadius: '8px',
+    background: 'transparent',
+    border: '2px solid $purple',
+    fontWeight: '600',
+    cursor: 'pointer',
+    transition: '0.3s',
+    color: '$purple',
+
+    '&:hover': {
+      background: '$purple',
+      color: '$white',
+    },
   },
 
   '.container': {
