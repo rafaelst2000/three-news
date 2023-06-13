@@ -1,4 +1,15 @@
+import { useRouter } from 'next/router'
+import React, { useState } from 'react'
+
 export default function TitleSection() {
+  const [search, setSearch] = useState('')
+  const router = useRouter()
+
+  function searchNews(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    router.push(`/news?q=${search}`)
+  }
+
   return (
     <div className="container title-section">
       <span>Nosso blog</span>
@@ -8,10 +19,15 @@ export default function TitleSection() {
         Busque um tema de seu interesse abaixo.
       </p>
 
-      <div className="search-container">
-        <input type="text" placeholder="Busque algo" />
-        <button>Buscar</button>
-      </div>
+      <form className="search-container" onSubmit={searchNews}>
+        <input
+          value={search}
+          onChange={(event) => setSearch(event.target.value)}
+          type="text"
+          placeholder="Busque algo"
+        />
+        <button type="submit">Buscar</button>
+      </form>
     </div>
   )
 }

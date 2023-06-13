@@ -1,14 +1,19 @@
+import { Article } from '@/pages/blog'
 import TopTrend from './TopTrend'
 
-export default function TopTrends() {
+interface TopTrendsProps {
+  articles: Article[]
+}
+
+export default function TopTrends({ articles }: TopTrendsProps) {
   return (
     <div className="top-trends">
       <div className="container">
         <h2>Melhores manchetes</h2>
       </div>
-      <TopTrend />
-      <TopTrend second />
-      <TopTrend />
+      {articles.map((article, index) => (
+        <TopTrend article={article} key={index} second={index === 1} />
+      ))}
     </div>
   )
 }

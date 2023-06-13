@@ -1,11 +1,28 @@
-export default function VerticalMenu() {
+interface VerticalMenuProps {
+  selectedArticle: number
+  setSelectedArticle: (value: number) => void
+}
+
+export default function VerticalMenu({
+  selectedArticle,
+  setSelectedArticle,
+}: VerticalMenuProps) {
+  const links = ['01', '02', '03']
+  const isActive = (value: number) => value === selectedArticle
+
   return (
     <nav>
       <ul>
-        <li className="active">01</li>
-        <li>02</li>
-        <li>03</li>
-        <li>04</li>
+        <li>Voltar</li>
+        {links.map((link, index) => (
+          <li
+            key={link}
+            className={isActive(index) ? 'active' : ''}
+            onClick={() => setSelectedArticle(index)}
+          >
+            {link}
+          </li>
+        ))}
       </ul>
     </nav>
   )

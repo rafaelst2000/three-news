@@ -8,16 +8,15 @@ export function Header() {
   const router = useRouter()
   const isAuth = session && session.status === 'authenticated'
 
-  useEffect(() => {
+  /*   useEffect(() => {
     if (typeof window !== 'undefined' && window) {
       if (isAuth) {
         const user = session.data.user
-        console.log('user', user)
       } else {
         logout()
       }
     }
-  }, [session, router, isAuth, login])
+  }, [session, router, isAuth, login]) */
 
   async function login() {
     await signIn('google')

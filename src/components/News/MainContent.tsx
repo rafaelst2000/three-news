@@ -1,16 +1,22 @@
+import { formatDate } from '@/helpers/formatDate'
+import { Article } from '@/pages/blog'
 import Image from 'next/image'
 
-export default function MainContent() {
+interface MainContentProps {
+  article: Article
+}
+
+export default function MainContent({ article }: MainContentProps) {
   return (
     <main>
       <div className="date-info">
-        <b>17 de Dezembro de 2022</b>
-        <span>Trevinews</span>
+        <b>{formatDate(article.publishedAt)}</b>
+        <span>Three News</span>
       </div>
-      <h1>Vagas de emprego em tecnologia crescem 34% nos últimos dez meses</h1>
-      <p>Por: Rafael Trevisan</p>
+      <h1>{article.title}</h1>
+      <p>Por: {article.author}</p>
       <Image
-        src="https://img.r7.com/images/tecnologia-tecnologico-tec-emprego-curso-13122022131511653?dimensions=677x369"
+        src={article.urlToImage}
         alt="news image logo"
         width={630}
         height={300}

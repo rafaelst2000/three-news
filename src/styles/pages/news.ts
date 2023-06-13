@@ -74,7 +74,7 @@ export const NewsContainer = styled('section', {
   'main p': {
     fontSize: '0.875rem',
     marginTop: '0.5rem',
-    color: '$pink',
+    color: '$purple',
     fontWeight: 'bold',
     opacity: '0.6',
     lineHeight: '1',
