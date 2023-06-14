@@ -105,12 +105,24 @@ export const HeaderContent = styled('div', {
     },
   },
 
+  img: {
+    borderRadius: '50%',
+  },
+
+  p: {
+    fontWeight: '600',
+  },
+
   '@media (width <= 768px)': {
     'ul li': {
       display: 'none',
     },
 
     'h2 a::after': {
+      display: 'none',
+    },
+
+    p: {
       display: 'none',
     },
   },

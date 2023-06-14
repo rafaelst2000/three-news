@@ -22,6 +22,17 @@ export const NewsContainer = styled('section', {
     gridArea: 'aside',
   },
 
+  '.go-back': {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.5rem',
+    fontWeight: 600,
+
+    '&:hover': {
+      color: '$purple',
+    },
+  },
+
   'nav li': {
     fontSize: '2rem',
     cursor: 'pointer',
@@ -278,6 +289,42 @@ export const NewsContainer = styled('section', {
     aside: {
       animation: 'slideFromLeft 0.4s ease-in',
       gridArea: 'aside',
+    },
+  },
+})
+
+export const NotFoundContainer = styled('section', {
+  marginTop: '2rem',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: '1rem',
+
+  h1: {
+    fontSize: '5rem',
+    textAlign: 'center',
+  },
+  h2: {
+    fontSize: '2rem',
+    textAlign: 'center',
+  },
+  p: {
+    textAlign: 'center',
+  },
+
+  button: {
+    outline: 0,
+    borderRadius: '8px',
+    padding: '12px 16px',
+    background: '$purple',
+    color: '$white',
+    fontWeight: '600',
+    cursor: 'pointer',
+    transition: '0.2s',
+
+    '&:hover': {
+      filter: 'brightness(85%)',
     },
   },
 })

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { NewsContainer } from '@/styles/pages/news'
+import { NewsContainer, NotFoundContainer } from '@/styles/pages/news'
 import { getServerSession } from 'next-auth/next'
 import { GetServerSideProps } from 'next'
 import { authOptions } from '@/pages/api/auth/[...nextauth]'
@@ -10,6 +10,7 @@ import VerticalMenu from '@/components/News/VerticalMenu'
 
 import { api } from './api/axios'
 import { Article } from './blog'
+import { useRouter } from 'next/router'
 
 interface NewsProps {
   articles: Article[]
@@ -17,11 +18,13 @@ interface NewsProps {
 
 export default function News({ articles }: NewsProps) {
   const [selectedArticle, setSelectedArticle] = useState(0)
+  const router = useRouter()
 
+  const isEmpty = articles.length === 0
   const threeArticles = [articles[0], articles[1], articles[2]]
   const article = threeArticles[selectedArticle]
 
-  return (
+  return !isEmpty ? (
     <NewsContainer className="container">
       <VerticalMenu
         selectedArticle={selectedArticle}
@@ -30,6 +33,18 @@ export default function News({ articles }: NewsProps) {
       <MainContent article={article} />
       <NewsData article={article} />
     </NewsContainer>
+  ) : (
+    <NotFoundContainer className="container">
+      <h1>Oops!</h1>
+      <h2>Artigos não encontrados</h2>
+      <p>
+        Parece que não encontramos nenhum artigo relacionado a esse termo. Tente
+        buscar por um novo tema.
+      </p>
+      <button className="button" onClick={() => router.push('/blog')}>
+        Voltar para o blog
+      </button>
+    </NotFoundContainer>
   )
 }
 
@@ -53,7 +68,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   return {
     props: {
-      articles: response.data.articles,
+      articles: response.data.articles || [],
       session,
     },
   }
