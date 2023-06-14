@@ -1,8 +1,10 @@
 import { HeaderContainer, HeaderContent } from '@/styles/components/Header'
 import { signIn, useSession, signOut } from 'next-auth/react'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 export function Header() {
+  const router = useRouter()
   const session = useSession()
   const isAuth = session && session.status === 'authenticated'
   const user = session.data?.user
@@ -21,8 +23,8 @@ export function Header() {
   return (
     <HeaderContainer>
       <HeaderContent>
-        <h2>
-          <a href="index.html">Three news</a>
+        <h2 onClick={() => router.push('/')}>
+          <a href="#">Three news</a>
         </h2>
         {isAuth ? (
           <ul>
