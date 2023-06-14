@@ -20,6 +20,7 @@ export default function MainContent({ article }: MainContentProps) {
         alt="news image logo"
         width={630}
         height={300}
+        quality={85}
       />
       <footer className="footer-links">
         <ul>

@@ -26,12 +26,10 @@ interface BlogProps {
 }
 
 export default function Blog({ articles }: BlogProps) {
-  const threeArticles = [articles[0], articles[1], articles[2]]
-
   return (
     <BlogContainer>
       <TitleSection />
-      <TopTrends articles={threeArticles} />
+      <TopTrends articles={articles} />
     </BlogContainer>
   )
 }
@@ -49,7 +47,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 
   const response = await api.get(
-    `/top-headlines?country=us&apiKey=${process.env.API_KEY}`,
+    `/top-headlines?country=us&pageSize=3&apiKey=${process.env.API_KEY}`,
   )
 
   return {

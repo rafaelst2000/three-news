@@ -1,12 +1,9 @@
 import { HeaderContainer, HeaderContent } from '@/styles/components/Header'
-import { useEffect } from 'react'
 import { signIn, useSession, signOut } from 'next-auth/react'
-import { useRouter } from 'next/router'
 import Image from 'next/image'
 
 export function Header() {
   const session = useSession()
-  const router = useRouter()
   const isAuth = session && session.status === 'authenticated'
   const user = session.data?.user
 

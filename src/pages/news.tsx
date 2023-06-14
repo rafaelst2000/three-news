@@ -21,8 +21,7 @@ export default function News({ articles }: NewsProps) {
   const router = useRouter()
 
   const isEmpty = articles.length === 0
-  const threeArticles = [articles[0], articles[1], articles[2]]
-  const article = threeArticles[selectedArticle]
+  const article = articles[selectedArticle]
 
   return !isEmpty ? (
     <NewsContainer className="container">
@@ -63,7 +62,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   const searchTerm = query.q
   const response = await api.get(
-    `/everything?q=${searchTerm}&language=pt&apiKey=${process.env.API_KEY}`,
+    `/everything?q=${searchTerm}&language=pt&pageSize=3&apiKey=${process.env.API_KEY}`,
   )
 
   return {
