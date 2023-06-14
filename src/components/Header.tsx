@@ -66,29 +66,6 @@ export function Header() {
             </button>
           </ul>
         )}
-        {/*  <ul>
-          {isAuth ? (
-            <button
-              className="outlined-button"
-              onClick={(e) => {
-                e.preventDefault()
-                logout()
-              }}
-            >
-              Sair
-            </button>
-          ) : (
-            <button
-              className="button"
-              onClick={(e) => {
-                e.preventDefault()
-                login()
-              }}
-            >
-              Entrar
-            </button>
-          )}
-        </ul> */}
       </HeaderContent>
     </HeaderContainer>
   )
