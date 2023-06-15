@@ -25,7 +25,7 @@ Este projeto foi desenvolvido durante a disciplina de **Frameworks de Desenvolvi
 ## **⚡Executando o projeto em ambiente de Produção**
 
 ```sh
-acesse [https://rafaelst2000-three-news.vercel.app/](https://rafaest2000-three-news.vercel.app/) pelo seu navegador.
+acesse https://rafaest2000-three-news.vercel.app/ pelo seu navegador.
 ```
 
 ## **⚡Executando o projeto em ambiente de Desenvolvimento**
