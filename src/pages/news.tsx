@@ -62,7 +62,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   const searchTerm = query.q
   const response = await api.get(
-    `/everything?q=${searchTerm}&language=us&pageSize=3&apiKey=${process.env.API_KEY}`,
+    `/everything?q=${searchTerm}&pageSize=3&apiKey=${process.env.API_KEY}`,
   )
 
   return {
