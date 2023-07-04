@@ -4,14 +4,21 @@ import { CaretLeft } from 'phosphor-react'
 interface VerticalMenuProps {
   selectedArticle: number
   setSelectedArticle: (value: number) => void
+  articlesLength: number
 }
 
 export default function VerticalMenu({
   selectedArticle,
   setSelectedArticle,
+  articlesLength,
 }: VerticalMenuProps) {
   const router = useRouter()
-  const links = ['01', '02', '03']
+  const links = []
+  for (let i = 1; i <= articlesLength; i++) {
+    const number = i.toString().padStart(2, '0')
+    links.push(number)
+  }
+
   const isActive = (value: number) => value === selectedArticle
 
   return (

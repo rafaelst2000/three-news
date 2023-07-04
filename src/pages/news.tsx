@@ -28,6 +28,7 @@ export default function News({ articles }: NewsProps) {
       <VerticalMenu
         selectedArticle={selectedArticle}
         setSelectedArticle={setSelectedArticle}
+        articlesLength={articles.length}
       />
       <MainContent article={article} />
       <NewsData article={article} />
