@@ -10,13 +10,13 @@ export default function MainContent({ article }: MainContentProps) {
   return (
     <main>
       <div className="date-info">
-        <b>{formatDate(article.publishedAt)}</b>
+        <b>{formatDate(article.publishedAt ?? '')}</b>
         <span>Three News</span>
       </div>
-      <h1>{article.title}</h1>
-      <p>By: {article.author}</p>
+      <h1>{article?.title}</h1>
+      <p>By: {article?.author}</p>
       <Image
-        src={article.urlToImage}
+        src={article.urlToImage ?? ''}
         alt="news image logo"
         width={630}
         height={300}
