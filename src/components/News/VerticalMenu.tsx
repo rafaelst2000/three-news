@@ -19,7 +19,7 @@ export default function VerticalMenu({
       <ul>
         <li className="go-back" onClick={() => router.push('/blog')}>
           <CaretLeft weight="bold" />
-          Voltar
+          Go back
         </li>
         {links.map((link, index) => (
           <li

@@ -12,10 +12,10 @@ export default function Home() {
     <>
       <HomeContainer className="container">
         <div className="main-content">
-          <h1>Seu repositório de notícias diárias</h1>
+          <h1>Your daily news repository</h1>
           <p>
-            Aqui você encontra diferentes notícias, de diversas áreas, para
-            começar o dia sempre bem informado :)
+            Here you can find different news from various fields to start your
+            day well-informed :)
           </p>
           <button
             className="button"
@@ -24,7 +24,7 @@ export default function Home() {
               signIn('google')
             }}
           >
-            Começar a ler agora
+            Start reading now
           </button>
         </div>
         <div className="img-container">

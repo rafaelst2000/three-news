@@ -28,13 +28,13 @@ export function Header() {
         </h2>
         {isAuth ? (
           <ul>
-            <p>Olá, {user?.name}</p>
+            <p>Hello, {user?.name}</p>
             <Image
               width={50}
               height={50}
               quality={100}
               src={user?.image || ''}
-              alt={'foto de perfil de ' + user?.name}
+              alt={user?.name + 'profile image'}
             />
             <button
               className="outlined-button"
@@ -43,19 +43,19 @@ export function Header() {
                 logout()
               }}
             >
-              Sair
+              Logout
             </button>
           </ul>
         ) : (
           <ul>
             <li>
-              <a href="#">Novidades</a>
+              <a href="#">News updates</a>
             </li>
             <li>
-              <a href="#">Serviços</a>
+              <a href="#">Services</a>
             </li>
             <li>
-              <a href="#">Contato</a>
+              <a href="#">Contact</a>
             </li>
             <button
               className="button"
@@ -64,7 +64,7 @@ export function Header() {
                 login()
               }}
             >
-              Entrar
+              Login
             </button>
           </ul>
         )}

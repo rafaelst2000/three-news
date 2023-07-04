@@ -10,15 +10,15 @@ export default function NewsData({ article }: NewsDataProps) {
       <div className="aside-content">
         <div className="aside-circle"></div>
         <div className="aside-group">
-          <h2>Resumo</h2>
+          <h2>Summary</h2>
           <p>{article.description}</p>
         </div>
         <div className="aside-group">
-          <h2>Fonte</h2>
+          <h2>Source</h2>
           <p>{article.source?.name || article.source?.id}</p>
         </div>
         <a href={article.url} target="_blank">
-          Leia a reportagem completa aqui
+          Read the complete article here
         </a>
       </div>
     </aside>

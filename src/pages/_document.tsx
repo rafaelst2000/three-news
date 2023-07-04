@@ -3,7 +3,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
-    <Html lang="pt-BR">
+    <Html lang="en-US">
       <Head>
         <title>Three News</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />

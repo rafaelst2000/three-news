@@ -12,11 +12,11 @@ export default function TitleSection() {
 
   return (
     <div className="container title-section">
-      <span>Nosso blog</span>
+      <span>Our blog</span>
       <h1>Three News</h1>
       <p>
-        O Three News seleciona as melhores notícias ao redor do mundo. <br />
-        Busque um tema de seu interesse abaixo.
+        Three News selects the best news from around the world <br />
+        Search for a topic of your interest below
       </p>
 
       <form className="search-container" onSubmit={searchNews}>
@@ -24,9 +24,9 @@ export default function TitleSection() {
           value={search}
           onChange={(event) => setSearch(event.target.value)}
           type="text"
-          placeholder="Busque algo"
+          placeholder="Search something..."
         />
-        <button type="submit">Buscar</button>
+        <button type="submit">Search</button>
       </form>
     </div>
   )

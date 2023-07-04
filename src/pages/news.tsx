@@ -35,13 +35,13 @@ export default function News({ articles }: NewsProps) {
   ) : (
     <NotFoundContainer className="container">
       <h1>Oops!</h1>
-      <h2>Artigos não encontrados</h2>
+      <h2>Articles not found</h2>
       <p>
-        Parece que não encontramos nenhum artigo relacionado a esse termo. Tente
-        buscar por um novo tema.
+        It seems that we couldn&apost find any articles related to that term.
+        Please try searching for a new topic.
       </p>
       <button className="button" onClick={() => router.push('/blog')}>
-        Voltar para o blog
+        Return to blog
       </button>
     </NotFoundContainer>
   )
@@ -62,7 +62,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   const searchTerm = query.q
   const response = await api.get(
-    `/everything?q=${searchTerm}&language=pt&pageSize=3&apiKey=${process.env.API_KEY}`,
+    `/everything?q=${searchTerm}&language=us&pageSize=3&apiKey=${process.env.API_KEY}`,
   )
 
   return {

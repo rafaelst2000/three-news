@@ -14,7 +14,7 @@ export default function MainContent({ article }: MainContentProps) {
         <span>Three News</span>
       </div>
       <h1>{article.title}</h1>
-      <p>Por: {article.author}</p>
+      <p>By: {article.author}</p>
       <Image
         src={article.urlToImage}
         alt="news image logo"
