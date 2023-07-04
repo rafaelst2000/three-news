@@ -37,7 +37,7 @@ export default function News({ articles }: NewsProps) {
       <h1>Oops!</h1>
       <h2>Articles not found</h2>
       <p>
-        It seems that we couldn&apost find any articles related to that term.
+        It seems that we couldnt find any articles related to that term.
         Please try searching for a new topic.
       </p>
       <button className="button" onClick={() => router.push('/blog')}>
